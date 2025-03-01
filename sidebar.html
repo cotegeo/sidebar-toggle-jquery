@@ -8,45 +8,7 @@
   <link rel="stylesheet" href="sidebar.css" />
   <title>Sidebar Toggle jQuery</title>
 </head>
-
-<style>
-  .sidebar {
-      height: 100vh;
-      background: white;
-      padding: 15px;
-      overflow-y: auto;
-      position: fixed;
-      left: 0;
-      top: 116px;
-      transition: transform 0.3s ease-in-out;
-      width: 500px;
-      border-right: 1px solid lightgrey;
-  }
-  .sidebar.hidden {
-      transform: translateX(-100%);
-  }
-  .toggle-btn {
-    position: absolute;
-    top: 150px;
-    left: 499px;
-    color: black;
-    border: none;
-    font-size:14px;
-    cursor: pointer;
-    transition: left 0.3s ease-in-out;
-    height: 50px;
-    width: 34px;
-    background: white;
-    border: 1px solid lightgrey;
-    border-radius: none;
-  }
-
-  .sidebar.hidden + .toggle-btn {
-      left: 0;
-  }
-</style>
-
-
+  
 <body>
 
   <div id="sidebar" class="sidebar">
@@ -58,16 +20,5 @@
 
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script>
-  $(document).ready(function() {
-      $('.toggle-btn').click(function() {
-          $('.sidebar').toggleClass('hidden');
-          if ($('.sidebar').hasClass('hidden')) {
-              $('.toggle-btn i').removeClass('left').addClass('right');
-          } else {
-              $('.toggle-btn i').removeClass('right').addClass('left');
-          }
-      });
-  });
-</script>
+<script type="text/javascript" src="sidebar.js"></script>
 </html>
