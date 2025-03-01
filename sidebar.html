@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" />
+
+  <title>Sidebar Toggle jQuery</title>
+</head>
+
+<style>
+  .sidebar {
+      height: 100vh;
+      background: white;
+      padding: 15px;
+      overflow-y: auto;
+      position: fixed;
+      left: 0;
+      top: 116px;
+      transition: transform 0.3s ease-in-out;
+      width: 500px;
+      border-right: 1px solid lightgrey;
+  }
+  .sidebar.hidden {
+      transform: translateX(-100%);
+  }
+  .toggle-btn {
+    position: absolute;
+    top: 150px;
+    left: 499px;
+    color: black;
+    border: none;
+    font-size:14px;
+    cursor: pointer;
+    transition: left 0.3s ease-in-out;
+    height: 50px;
+    width: 34px;
+    background: white;
+    border: 1px solid lightgrey;
+    border-radius: none;
+  }
+
+  .sidebar.hidden + .toggle-btn {
+      left: 0;
+  }
+</style>
+
+
+<body>
+
+  <div id="sidebar" class="sidebar">
+      <div id="sidebar-header"></div>
+      <div id="sidebar-content"></div>
+  </div>
+  <button class="toggle-btn"><i class="angle left icon"></i></button>
+
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script>
+  $(document).ready(function() {
+      $('.toggle-btn').click(function() {
+          $('.sidebar').toggleClass('hidden');
+          if ($('.sidebar').hasClass('hidden')) {
+              $('.toggle-btn i').removeClass('left').addClass('right');
+          } else {
+              $('.toggle-btn i').removeClass('right').addClass('left');
+          }
+      });
+  });
+</script>
+</html>
